@@ -19,7 +19,7 @@ namespace CppApi
             XOR = 8,
             LeftShift = 9,
             RightShift = 10
-        }
+        };
         
         inline TInteger() : mv_Value()
         {
@@ -34,12 +34,30 @@ namespace CppApi
         }
         
         inline TInteger(const TInteger & val1, const TInteger & val2,
-                        IntegerOperation enOpCode)
+                        IntegerOperation enOpCode) : mv_Value()
         {
-            
+            mv_Value = IntegerMath(val1.mv_Value, val2.mv_Value, enOpCode);
         }
     protected:
+        // Member Variables
         IntType mv_Value;
+        
+        // Protected Member Functions
+        inline IntType IntegerMath(IntType val1, IntType val2,
+                                   IntegerOperation enOpCode)
+        {
+            IntType value();
+            
+            switch(enOpCode)
+            {
+            case IntegerOperation::Multiply:
+                value = val1 * val2;
+                break;
+            case IntegerOperation::Divide:
+                value = val1 / val2;
+                break;
+            }
+        }
     };
 }
 
