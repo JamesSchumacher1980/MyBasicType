@@ -9,6 +9,7 @@ namespace CppApi
     public:
         enum IntegerOperation : unsigned long
         {
+            None = 0,
             Multiply = 1,
             Divide = 2,
             Modulus = 3,
@@ -56,6 +57,13 @@ namespace CppApi
             case IntegerOperation::Divide:
                 value = val1 / val2;
                 break;
+            case IntegerOperation::Modulus:
+                value = val1 % val2;
+                break;
+            case IntegerOperation::Add:
+                value = val1 + val2;
+                break;
+            
             }
         }
     };
