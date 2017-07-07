@@ -39,6 +39,18 @@ namespace CppApi
         {
             mv_Value = IntegerMath(val1.mv_Value, val2.mv_Value, enOpCode);
         }
+        
+        inline ~TInteger()
+        {
+        }
+        
+        // Overloaded Operators
+        inline TInteger<IntType> & operator = (IntType val)
+        {
+            mv_Value = val;
+            
+            return *this;
+        }
     protected:
         // Member Variables
         IntType mv_Value;
