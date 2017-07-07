@@ -61,6 +61,14 @@ namespace CppApi
             
             return *this;
         }
+        
+        inline TInteger<Type> & operator += (const TInteger<IntType> & valObj)
+        {
+            if (this != &valObj)
+            {
+                mv_Value += valObj.mv_Value;
+            }
+        }
     protected:
         // Member Variables
         IntType mv_Value;
