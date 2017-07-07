@@ -55,9 +55,24 @@ namespace CppApi
                 value = val1 * val2;
                 break;
             case IntegerOperation::Divide:
+                    
+                if (val2 == 0)
+                {
+                    // throw a divide by zero
+                    // exception
+                }
+                    
                 value = val1 / val2;
                 break;
-            case IntegerOperation::Modulus:
+                case IntegerOperation::Modulus:
+                    
+                    if (val2 == 0)
+                    {
+                        // should throw divide
+                        // by zero exception,
+                        // as modulus is remainder
+                    }
+                    
                 value = val1 % val2;
                 break;
             case IntegerOperation::Add:
