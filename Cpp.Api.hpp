@@ -51,6 +51,15 @@ namespace CppApi
             
             switch(enOpCode)
             {
+            // put the shifts at the top
+            case IntegerOperation::LeftShift:
+                value = val1 << val2;
+                break;
+            case IntegerOperation::RightShift:
+                value = val1 >> val2;
+                break;
+            case IntegerOperation::None:
+                break;
             case IntegerOperation::Multiply:
                 value = val1 * val2;
                 break;
@@ -86,7 +95,7 @@ namespace CppApi
                 break;
             case IntegerOperation::OR:
                 value = val1 | val2;
-                brwak;
+                break;
             case IntegerOperation::XOR:
                 value = val1 ^ val2;
                 break;
