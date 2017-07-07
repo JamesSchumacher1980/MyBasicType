@@ -30,11 +30,11 @@ namespace CppApi
         {
         }
         
-        inline TInteger(const TInteger & valObj) : mv_Value(valObj.mv_Value)
+        inline TInteger(const TInteger<IntType> & valObj) : mv_Value(valObj.mv_Value)
         {
         }
         
-        inline TInteger(const TInteger & val1, const TInteger & val2,
+        inline TInteger(const TInteger<IntType> & val1, const TInteger<IntType> & val2,
                         IntegerOperation enOpCode) : mv_Value()
         {
             mv_Value = IntegerMath(val1.mv_Value, val2.mv_Value, enOpCode);
