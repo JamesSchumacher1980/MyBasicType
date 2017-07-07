@@ -87,6 +87,10 @@ namespace CppApi
             if (this != &valObj)
             {
                 mv_Value -= valObj.mv_Value;
+            else
+            {
+                const IntType val = valObj.mv_Value;
+                mv_Value += val;
             }
             
             return *this;
@@ -95,6 +99,21 @@ namespace CppApi
         inline TInteger<IntType> operator - (const TInteger<IntType> & valObj) const
         {
             return TInteger<IntType>(mv_Value - valObj.mv_Value);
+        }
+        
+        inline TInteger<IntType> & operator *= (const TInteger<IntType> & valObj) const
+        {
+            if (this != &valObj)
+            {
+                mv_Value *= valObj.mv_Value;
+            }
+            else
+            {
+                const IntType val = valObj.mv_Value;
+                mv_Value *= val;
+            }
+            
+            return *this;
         }
     protected:
         // Member Variables
