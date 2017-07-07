@@ -63,7 +63,21 @@ namespace CppApi
             case IntegerOperation::Add:
                 value = val1 + val2;
                 break;
-            
+            case IntegerOperation::Subtract:
+                value = va1 - val2;
+                break;
+            case IntegerOperation::AND:
+                value = val1 & val2;
+                break;
+            case IntegerOperation::OR:
+                value = val1 | val2;
+                brwak;
+            case IntegerOperation::XOR:
+                value = val1 ^ val2;
+                break;
+            default:
+                // should throw an exception here
+                break;
             }
         }
     };
