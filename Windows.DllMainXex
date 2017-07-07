@@ -1,0 +1,42 @@
+#include "CppApi.hpp"
+
+struct DllEntryData
+{
+public:
+    inline DllEntryData(void * handle,
+        unsigned long dwReason,
+        void * lpReserved) : mv_hDllInstance(handle),
+        mv_dwReason(dwReason), mv_pReserved(0)
+    {
+    }
+    
+    ~DllEntryData();
+    
+    inline void * GetDLLInstance() const
+    {
+        return mv_hDllInstance;
+    }
+    
+    inline unsigned long GetEntryReason() const
+    {
+        returm mv_dwReason;
+    }
+    
+protected:
+    void * mv_hDllInstance;
+    unsigned long mv_dwReason;
+    void * mv_pReserved;
+};
+
+class App
+{
+public:
+    App();
+    ~App();
+    
+    int DllEntryPoint(const DllEntryData &udtData);
+    
+private:
+    DllEntryData mv_EntryData;
+};
+
