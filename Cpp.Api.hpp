@@ -68,6 +68,13 @@ namespace CppApi
             {
                 mv_Value += valObj.mv_Value;
             }
+            else
+            {
+                const unsigned long dwTemp = valObj.mv_Value;
+                mv_Value += dwTemp;
+            }
+            
+            return *this;
         }
     protected:
         // Member Variables
