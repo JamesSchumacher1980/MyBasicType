@@ -102,7 +102,9 @@ namespace CppApi
             default:
                 // should throw an exception here
                 break;
-            }
+            };
+            
+            return value;
         }
     };
 }
