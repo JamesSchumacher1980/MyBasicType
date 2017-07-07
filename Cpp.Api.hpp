@@ -44,6 +44,15 @@ namespace CppApi
         IntType mv_Value;
         
         // Protected Member Functions
+        
+        // Obviously, the below function is intended
+        // for being used as a general way to perform math
+        // on 2 integer values and return the result in a manner
+        // it would be easy to track your Operations
+        // by storing your operands and opcodes in
+        // in a data structure, which could be multiple
+        // in a container/etc..
+        
         inline IntType IntegerMath(IntType val1, IntType val2,
                                    IntegerOperation enOpCode)
         {
